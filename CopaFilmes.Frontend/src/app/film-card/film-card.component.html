@@ -2,7 +2,11 @@
     <div class="card-body">
         <div class="row">
             <div class="col-2 my-auto">
-                <input type="checkbox">
+                <input
+                    type="checkbox"
+                    [checked]="isSelected"
+                    [disabled]="isDisabled()"
+                    (click)="onSelectFilm()">
             </div>
             <div class="col-10  my-auto">
                 <p class="card-title">
