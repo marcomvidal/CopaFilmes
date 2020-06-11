@@ -27,8 +27,16 @@ namespace CopaFilmes.Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddHttpClient<IFilmsService, FilmsService>(
                 c => c.BaseAddress = new Uri(Configuration["CopaFilmesUrl"]));
+            
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    name: "allowFrontEndPolicy",
+                    builder => builder.WithOrigins(Configuration["FrontEndUrl"]));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +50,8 @@ namespace CopaFilmes.Backend
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("allowFrontEndPolicy");
 
             app.UseAuthorization();
 
