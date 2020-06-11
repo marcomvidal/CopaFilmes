@@ -6,12 +6,11 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
-        Selecionados
-        0 de 8 filmes
+    <div class="col-md-6 my-auto">
+        <h5>Selecionados 0 de 8 filmes</h5>
     </div>
 
-    <div class="col-md-6 text-right">
+    <div class="col-md-6 text-right my-auto">
         <a href="#" class="btn btn-primary">
             Gerar meu campeonato
         </a>
@@ -19,7 +18,7 @@
 </div>
 
 <div class="row">
-    <div *ngFor="let film of availableFilms" class="col-md-3">
+    <div *ngFor="let film of availableFilms" class="col-md-3 my-auto">
         <app-film-card [film]="film"></app-film-card>
     </div>
 </div>
