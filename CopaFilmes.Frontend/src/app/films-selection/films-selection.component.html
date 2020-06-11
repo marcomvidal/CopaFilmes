@@ -11,9 +11,12 @@
     </div>
 
     <div class="col-md-6 text-right my-auto">
-        <a href="#" class="btn btn-primary">
+        <button
+            class="btn btn-primary"
+            (click)="onGenerateChampionship()"
+            [disabled]="isGenerateButtonDisabled()">
             Gerar meu campeonato
-        </a>
+        </button>
     </div>
 </div>
 

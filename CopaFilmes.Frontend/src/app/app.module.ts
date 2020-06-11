@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { FilmsSelectionComponent } from './films-selection/films-selection.component';
 import { BannerComponent } from './banner/banner.component';
 import { FilmCardComponent } from './film-card/film-card.component';
+import { ChampionshipResultComponent } from './championship-result/championship-result.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FilmCardComponent } from './film-card/film-card.component';
     FilmsSelectionComponent,
     BannerComponent,
     FilmCardComponent,
+    ChampionshipResultComponent,
   ],
   imports: [
     BrowserModule,

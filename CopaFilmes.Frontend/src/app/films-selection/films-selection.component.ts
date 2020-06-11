@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from '../models/Film';
 import { FilmService } from '../services/film.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-films-selection',
@@ -12,12 +13,18 @@ export class FilmsSelectionComponent implements OnInit {
   availableFilms: Film[];
   selectedFilms: Film[];
 
-  constructor(private service: FilmService) {
+  constructor(
+    private router: Router,
+    private service: FilmService) {
     this.selectedFilms = [];
   }
 
   ngOnInit(): void {
     this.service.getAll().subscribe(films => this.availableFilms = films);
+  }
+
+  isGenerateButtonDisabled(): boolean {
+    return this.selectedFilms.length != 8;
   }
 
   onSelectFilm($event: Film): void {
@@ -26,4 +33,8 @@ export class FilmsSelectionComponent implements OnInit {
       this.selectedFilms.concat($event);
   }
 
+  onGenerateChampionship(): void {
+    this.service.generateChampionship(this.selectedFilms)
+      .subscribe(() => this.router.navigate(['/resultado']));
+  }
 }
