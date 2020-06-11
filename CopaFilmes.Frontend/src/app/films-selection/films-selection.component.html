@@ -1,0 +1,25 @@
+<div class="row">
+    <app-banner 
+        title="Fase de seleção"
+        description="Selecione 8 filmes que você deseja que entrem na competição e depois pressione o botão Gerar Meu Campeonato para prosseguir.">
+    </app-banner>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        Selecionados
+        0 de 8 filmes
+    </div>
+
+    <div class="col-md-6 text-right">
+        <a href="#" class="btn btn-primary">
+            Gerar meu campeonato
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div *ngFor="let film of availableFilms" class="col-md-3">
+        <app-film-card [film]="film"></app-film-card>
+    </div>
+</div>
