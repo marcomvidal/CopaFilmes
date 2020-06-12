@@ -30,6 +30,8 @@ namespace CopaFilmes.Backend
             
             services.AddControllers();
 
+            services.AddScoped<IFilmsRepository, FilmsRepository>();
+
             services.AddHttpClient<IFilmsService, FilmsService>(
                 c => c.BaseAddress = new Uri(Configuration["CopaFilmesUrl"]));
             
