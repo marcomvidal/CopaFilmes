@@ -32,17 +32,10 @@ namespace CopaFilmes.Backend.Services
 
         public IEnumerable<Film> GenerateChampionship(IEnumerable<Film> films)
         {
-            films = films.OrderBy(film => film.Titulo);
-            var initialChampionship = new InitialChampionship(films, 8);
-            var initialWinners = initialChampionship.Compete();
+            var championship = new Championship(8);
+            var winners = championship.DetermineWinners(films);
 
-            var eliminatoryChampionship = new EliminatoryChampionship(initialWinners, 4);
-            var eliminatoryWinners = eliminatoryChampionship.Compete();
-
-            var finalChampionship = new FinalChampionship(eliminatoryWinners, 2);
-            var finalWinners = finalChampionship.Compete();
-
-            return _repository.SaveWinners(finalWinners);
+            return _repository.SaveWinners(winners);
         }
 
         public IEnumerable<Film> GetWinners()

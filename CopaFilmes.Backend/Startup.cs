@@ -41,10 +41,8 @@ namespace CopaFilmes.Backend
                     name: "allowFrontEndPolicy",
                     builder =>
                     {
-                        //builder.WithOrigins(Configuration["FrontEndUrl"]);
-                        builder.AllowAnyOrigin();
+                        builder.WithOrigins(Configuration["FrontEndUrl"]);
                         builder.AllowAnyHeader();
-                        builder.AllowAnyMethod();
                     });
             });
         }

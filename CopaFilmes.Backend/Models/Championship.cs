@@ -3,41 +3,34 @@ using System.Linq;
 
 namespace CopaFilmes.Backend.Models
 {
-    public abstract class Championship
+    public class Championship
     {
-        public IEnumerable<Film> Films { get; private set; }
-        public int MaxContestants { get; private set; }
-        public int Matches { get; private set; }
+        public int Contestants { get; private set; }
+        public IEnumerable<Phase> Phases { get; private set; }
 
-        public Championship(IEnumerable<Film> films, int maxContestants)
+        public Championship(int contestants)
         {
-            Films = films;
-            MaxContestants = maxContestants;
-            Matches = MaxContestants / 2;
-        }
+            Contestants = contestants;
 
-        public abstract IEnumerable<Film> Compete();
-
-        public IEnumerable<Film> Compare(IEnumerable<Film> firstHalf, IEnumerable<Film> secondHalf)
-        {
-            var winners = new List<Film>();
-            
-            for (int i = 0; i < Matches; i++)
+            Phases = new List<Phase>
             {
-                var competition = new Competition(firstHalf.ElementAt(i), secondHalf.ElementAt(i));
-                winners.Add(competition.DetermineWinner());
-            }
-
-            return winners;
+                new InitialPhase(contestants),
+                new EliminatoryPhase(contestants / 2),
+                new FinalPhase(contestants / 4)
+            };
         }
 
-        public IEnumerable<Film> Compare(Film firstFilm, Film secondFilm)
+        public Championship(int contestants, IEnumerable<Phase> phases)
         {
-            var competition = new Competition(firstFilm, secondFilm);
+            Contestants = contestants;
+            Phases = phases;
+        }
 
-            return competition.DetermineWinner() == firstFilm ?
-                new List<Film> { firstFilm, secondFilm } :
-                new List<Film> { secondFilm, firstFilm };
+        public IEnumerable<Film> DetermineWinners(IEnumerable<Film> films)
+        {
+            films = films.OrderBy(film => film.Titulo);
+            
+            return Phases.Aggregate(films, (accumulator, phase) => phase.DetermineWinners(accumulator));
         }
     }
 }
