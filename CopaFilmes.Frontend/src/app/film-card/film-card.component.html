@@ -1,14 +1,15 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
-            <div class="col-2 my-auto">
+            <div class="col-12 col-lg-2 my-auto">
                 <input
                     type="checkbox"
+                    class="large-checkbox"
                     [checked]="isSelected"
                     [disabled]="isDisabled()"
                     (click)="onSelectFilm()">
             </div>
-            <div class="col-10  my-auto">
+            <div class="col-12 col-lg-10 my-auto">
                 <p class="card-title">
                     <strong>{{ film.titulo }}</strong>
                 </p>

@@ -10,6 +10,8 @@ import { FilmsSelectionComponent } from './films-selection/films-selection.compo
 import { BannerComponent } from './banner/banner.component';
 import { FilmCardComponent } from './film-card/film-card.component';
 import { ChampionshipResultComponent } from './championship-result/championship-result.component';
+import { WinnerFilmCardComponent } from './winner-film-card/winner-film-card.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ChampionshipResultComponent } from './championship-result/championship-
     BannerComponent,
     FilmCardComponent,
     ChampionshipResultComponent,
+    WinnerFilmCardComponent,
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,

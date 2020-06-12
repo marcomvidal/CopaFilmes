@@ -23,4 +23,8 @@ export class FilmService {
   generateChampionship(films: Film[]): Observable<Object> {
     return this.http.post<Film[]>(`${this.url}/generate-championship`, films);
   }
+
+  getWinners(): Observable<Film[]> {
+    return this.http.get<Film[]>(`${this.url}/winners`).pipe(take(1));
+  }
 }
