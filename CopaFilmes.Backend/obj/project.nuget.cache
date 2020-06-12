@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DcP9pa1g6zEQFIL2nhCF3umXeNBULWr7Z3Z+5mskqf94rZnrz+moEQPvhxtVYA5+hwDmfIK588J170BJwubMZg==",
+  "dgSpecHash": "aA1PkVNdZJPRkXuxmpgdjuFXBWYkvbfUAhH9n5pfqGlU/v51xy9DxCYtqbZUhWpIkrw9ufeFOlhvD6S4Cmv+Zw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Marco\\Workspace\\Web\\CopaFilmes\\CopaFilmes.Backend\\CopaFilmes.Backend.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Marco\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

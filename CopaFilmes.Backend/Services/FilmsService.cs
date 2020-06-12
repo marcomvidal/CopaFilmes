@@ -6,15 +6,18 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using CopaFilmes.Backend.Models;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace CopaFilmes.Backend.Services
 {
     public class FilmsService : IFilmsService
     {
+        private readonly IMemoryCache _cache;
         private readonly HttpClient _http;
 
-        public FilmsService(HttpClient http)
+        public FilmsService(IMemoryCache cache, HttpClient http)
         {
+            _cache = cache;
             _http = http;
         }
 
@@ -42,7 +45,21 @@ namespace CopaFilmes.Backend.Services
             var finalChampionship = new FinalChampionship(eliminatoryWinners, 2);
             var finalWinners = finalChampionship.Compete();
 
+            _cache.Set(
+                "WinnerFilms",
+                finalWinners,
+                new MemoryCacheEntryOptions { AbsoluteExpiration = DateTime.Now.AddHours(1) });
+
             return finalWinners;
+        }
+
+        public IEnumerable<Film> GetWinner()
+        {
+            List<Film> winner;
+
+            return _cache.TryGetValue("WinnerFilms", out winner) ?
+                winner :
+                new List<Film>();
         }
     }
 }

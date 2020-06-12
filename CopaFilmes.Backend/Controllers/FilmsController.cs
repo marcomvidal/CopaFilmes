@@ -29,7 +29,13 @@ namespace CopaFilmes.Backend.Controllers
         [HttpPost("generate-championship")]
         public IActionResult GenerateChampionship([FromBody] IEnumerable<Film> films)
         {
-            return Ok(_service.GenerateChampionship(films));
+            return CreatedAtAction(nameof(Winner), _service.GenerateChampionship(films));
+        }
+
+        [HttpGet("winner")]
+        public IActionResult Winner()
+        {
+            return Ok(_service.GetWinner());
         }
     }
 }

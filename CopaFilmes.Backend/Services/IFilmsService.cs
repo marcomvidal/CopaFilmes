@@ -9,5 +9,6 @@ namespace CopaFilmes.Backend.Services
     {
         Task<IEnumerable<Film>> GetAll();
         IEnumerable<Film> GenerateChampionship(IEnumerable<Film> films);
+        IEnumerable<Film> GetWinner();
     }
 }

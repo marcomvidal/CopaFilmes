@@ -6,8 +6,7 @@ namespace CopaFilmes.Backend.Models
     public class FinalChampionship : Championship
     {
         
-        public FinalChampionship(IEnumerable<Film> films, int maxContestants) : base(films, maxContestants)
-        { }
+        public FinalChampionship(IEnumerable<Film> films, int maxContestants) : base(films, maxContestants) { }
 
         public override IEnumerable<Film> Compete()
         {
