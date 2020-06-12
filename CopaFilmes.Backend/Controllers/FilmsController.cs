@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CopaFilmes.Backend.Models;
 using CopaFilmes.Backend.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -23,6 +24,12 @@ namespace CopaFilmes.Backend.Controllers
         public async Task<IActionResult> Get()
         {
             return Ok(await _service.GetAll());
+        }
+
+        [HttpPost("generate-championship")]
+        public IActionResult GenerateChampionship([FromBody] IEnumerable<Film> films)
+        {
+            return Ok(_service.GenerateChampionship(films));
         }
     }
 }

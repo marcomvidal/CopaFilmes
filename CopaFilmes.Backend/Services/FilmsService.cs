@@ -27,7 +27,22 @@ namespace CopaFilmes.Backend.Services
                 body,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            return films.OrderBy(f => f.Titulo);
+            return films.OrderBy(film => film.Titulo);
+        }
+
+        public IEnumerable<Film> GenerateChampionship(IEnumerable<Film> films)
+        {
+            films = films.OrderBy(film => film.Titulo);
+            var initialChampionship = new InitialChampionship(films, 8);
+            var initialWinners = initialChampionship.Compete();
+
+            var eliminatoryChampionship = new EliminatoryChampionship(initialWinners, 4);
+            var eliminatoryWinners = eliminatoryChampionship.Compete();
+
+            var finalChampionship = new FinalChampionship(eliminatoryWinners, 2);
+            var finalWinners = finalChampionship.Compete();
+
+            return finalWinners;
         }
     }
 }

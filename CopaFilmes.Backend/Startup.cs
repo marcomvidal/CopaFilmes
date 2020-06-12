@@ -35,7 +35,13 @@ namespace CopaFilmes.Backend
             {
                 options.AddPolicy(
                     name: "allowFrontEndPolicy",
-                    builder => builder.WithOrigins(Configuration["FrontEndUrl"]));
+                    builder =>
+                    {
+                        //builder.WithOrigins(Configuration["FrontEndUrl"]);
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyHeader();
+                        builder.AllowAnyMethod();
+                    });
             });
         }
 

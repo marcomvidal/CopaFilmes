@@ -8,5 +8,6 @@ namespace CopaFilmes.Backend.Services
     public interface IFilmsService
     {
         Task<IEnumerable<Film>> GetAll();
+        IEnumerable<Film> GenerateChampionship(IEnumerable<Film> films);
     }
 }
