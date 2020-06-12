@@ -901,6 +901,19 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "CopaFilmes.Backend/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CopaFilmes.Backend.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CopaFilmes.Backend.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -3459,10 +3472,16 @@
         "xunit.runner.visualstudio.2.4.0.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "CopaFilmes.Backend/1.0.0": {
+      "type": "project",
+      "path": "../CopaFilmes.Backend/CopaFilmes.Backend.csproj",
+      "msbuildProject": "../CopaFilmes.Backend/CopaFilmes.Backend.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CopaFilmes.Backend >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "coverlet.collector >= 1.2.0",
       "xunit >= 2.4.0",
@@ -3501,7 +3520,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Marco\\Workspace\\Web\\CopaFilmes\\CopaFilmes.Backend\\CopaFilmes.Backend.csproj": {
+              "projectPath": "C:\\Users\\Marco\\Workspace\\Web\\CopaFilmes\\CopaFilmes.Backend\\CopaFilmes.Backend.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3540,18 +3563,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -94,3 +94,9 @@ C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\obj\Debug\netcoreapp3.1\
 C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\obj\Debug\netcoreapp3.1\CopaFilmes.Test.dll
 C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\obj\Debug\netcoreapp3.1\CopaFilmes.Test.pdb
 C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\obj\Debug\netcoreapp3.1\CopaFilmes.Test.genruntimeconfig.cache
+C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\bin\Debug\netcoreapp3.1\CopaFilmes.Backend.exe
+C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\bin\Debug\netcoreapp3.1\CopaFilmes.Backend.dll
+C:\Users\Marco\Workspace\Web\CopaFilmes\CopaFilmes.Test\bin\Debug\netcoreapp3.1\CopaFilmes.Backend.pdb
