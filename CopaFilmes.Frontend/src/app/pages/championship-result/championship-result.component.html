@@ -8,8 +8,12 @@
     </banner>
 </div>
 
-<div class="row">
+<div *ngIf="films != undefined && films.length != 0" class="row">
     <div *ngFor="let film of films; let i = index" class="col-md-12 my-auto">
         <winner-film-card [placement]="i + 1" [film]="film"></winner-film-card>
     </div>
 </div>
+
+<p *ngIf="films != undefined && films.length == 0" class="text-center">
+    A consulta por vencedores pode não ter sido realizada ou expirado. Tente selecionar novamente os filmes.
+</p>

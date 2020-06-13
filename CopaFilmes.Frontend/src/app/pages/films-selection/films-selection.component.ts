@@ -46,6 +46,8 @@ export class FilmsSelectionComponent implements OnInit {
 
   onGenerateChampionship(): void {
     this.service.generateChampionship(this.selectedFilms)
-      .subscribe(() => this.router.navigate(['/resultado']));
+      .subscribe(
+        () => this.router.navigate(['/resultado']),
+        () => this.errorMessage = ERROR_MESSAGES.badConnectivity);
   }
 }
