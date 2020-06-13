@@ -32,7 +32,11 @@ namespace CopaFilmes.Backend.Services
 
         public IEnumerable<Film> GenerateChampionship(IEnumerable<Film> films)
         {
-            var championship = new Championship(8);
+            var championship = new Championship(
+                new InitialPhase(8),
+                new EliminatoryPhase(4),
+                new FinalPhase(2));
+            
             var winners = championship.DetermineWinners(films);
 
             return _repository.SaveWinners(winners);
