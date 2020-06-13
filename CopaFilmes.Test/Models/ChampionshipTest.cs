@@ -1,7 +1,6 @@
 using Xunit;
 using CopaFilmes.Backend.Models;
 using System.Collections.Generic;
-using System;
 
 namespace CopaFilmes.Test.Models
 {
