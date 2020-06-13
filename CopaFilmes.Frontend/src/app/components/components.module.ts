@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
+
 import { BannerComponent } from './banner/banner.component';
 import { FilmCardComponent } from './film-card/film-card.component';
 import { BreadcrumbBarComponent } from './breadcrumb-bar/breadcrumb-bar.component';
 import { WinnerFilmCardComponent } from './winner-film-card/winner-film-card.component';
+import { DangerAlertComponent } from './danger-alert/danger-alert.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,7 @@ import { WinnerFilmCardComponent } from './winner-film-card/winner-film-card.com
     FilmCardComponent,
     BreadcrumbBarComponent,
     WinnerFilmCardComponent,
+    DangerAlertComponent,
   ],
   imports: [
     CommonModule,
@@ -19,6 +22,7 @@ import { WinnerFilmCardComponent } from './winner-film-card/winner-film-card.com
   ],
   exports: [
     BannerComponent,
+    DangerAlertComponent,
     FilmCardComponent,
     BreadcrumbBarComponent,
     WinnerFilmCardComponent,

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Film } from '../../models/Film';
 import { FilmService } from '../../services/film.service';
 import { Link } from '../../components/breadcrumb-bar/Link';
+import { ERROR_MESSAGES } from 'src/app/components/danger-alert/error-messages';
 
 @Component({
   selector: 'app-films-selection',
@@ -12,10 +13,14 @@ import { Link } from '../../components/breadcrumb-bar/Link';
 export class FilmsSelectionComponent implements OnInit {
 
   availableFilms: Film[];
+
   selectedFilms: Film[];
+  
   breadcrumbLinks: Link[] = [
     new Link('Seleção de filmes', '/selecao-de-filmes', true)
   ];
+
+  errorMessage: string | null;
 
   constructor(
     private router: Router,
@@ -24,7 +29,9 @@ export class FilmsSelectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAll().subscribe(films => this.availableFilms = films);
+    this.service.getAll().subscribe(
+      films => this.availableFilms = films,
+      () => this.errorMessage = ERROR_MESSAGES.badConnectivity);
   }
 
   isGenerateButtonDisabled(): boolean {
