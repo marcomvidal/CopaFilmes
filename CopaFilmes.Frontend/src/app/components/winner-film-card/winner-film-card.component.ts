@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Film } from '../models/Film';
+import { Film } from '../../models/Film';
 
 @Component({
-  selector: 'app-winner-film-card',
+  selector: 'winner-film-card',
   templateUrl: './winner-film-card.component.html',
   styleUrls: ['./winner-film-card.component.css'],
   host: { 'class': 'col-md-3' }

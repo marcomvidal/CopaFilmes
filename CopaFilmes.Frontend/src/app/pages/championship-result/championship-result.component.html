@@ -1,12 +1,14 @@
+<breadcrumb-bar [links]="breadcrumbLinks"></breadcrumb-bar>
+
 <div class="row">
-    <app-banner 
+    <banner 
         title="Resultado final"
         description="Veja o resultado final do campeonato de filmes de forma simples e rápida.">
-    </app-banner>
+    </banner>
 </div>
 
 <div class="row">
     <div *ngFor="let film of films; let i = index" class="col-md-12 my-auto">
-        <app-winner-film-card [placement]="i + 1" [film]="film"></app-winner-film-card>
+        <winner-film-card [placement]="i + 1" [film]="film"></winner-film-card>
     </div>
 </div>

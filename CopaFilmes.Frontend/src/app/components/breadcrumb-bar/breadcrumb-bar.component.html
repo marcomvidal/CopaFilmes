@@ -1,0 +1,9 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li *ngFor="let link of links"
+            class="breadcrumb-item {{ link.isCurrentPage ? 'active' : '' }}">
+            <span *ngIf="link.isCurrentPage">{{ link.label }}</span>
+            <a *ngIf="!link.isCurrentPage" [routerLink]="[link.url]">{{ link.label }}</a>
+        </li>
+    </ol>
+</nav>

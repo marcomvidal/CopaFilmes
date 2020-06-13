@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmService } from '../services/film.service';
-import { Film } from '../models/Film';
+import { FilmService } from '../../services/film.service';
+import { Film } from '../../models/Film';
+import { Link } from '../../components/breadcrumb-bar/Link';
 
 @Component({
   selector: 'app-championship-result',
@@ -10,6 +11,10 @@ import { Film } from '../models/Film';
 export class ChampionshipResultComponent implements OnInit {
 
   films: Film[];
+  breadcrumbLinks: Link[] = [
+    new Link('Seleção de filmes', '/selecao-de-filmes', false),
+    new Link('Resultado final', '/resultado', true)
+  ];
 
   constructor(private service: FilmService) { }
 

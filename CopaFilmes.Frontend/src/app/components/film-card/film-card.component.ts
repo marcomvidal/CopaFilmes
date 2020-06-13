@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Film } from '../models/Film';
+import { Film } from '../../models/Film';
 
 @Component({
-  selector: 'app-film-card',
+  selector: 'film-card',
   templateUrl: './film-card.component.html',
   styleUrls: ['./film-card.component.css'],
   host: { 'class': 'col-md-3' }

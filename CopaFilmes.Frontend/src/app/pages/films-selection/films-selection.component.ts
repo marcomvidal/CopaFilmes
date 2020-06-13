@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Film } from '../models/Film';
-import { FilmService } from '../services/film.service';
 import { Router } from '@angular/router';
+import { Film } from '../../models/Film';
+import { FilmService } from '../../services/film.service';
+import { Link } from '../../components/breadcrumb-bar/Link';
 
 @Component({
   selector: 'app-films-selection',
@@ -12,6 +13,9 @@ export class FilmsSelectionComponent implements OnInit {
 
   availableFilms: Film[];
   selectedFilms: Film[];
+  breadcrumbLinks: Link[] = [
+    new Link('Seleção de filmes', '/selecao-de-filmes', true)
+  ];
 
   constructor(
     private router: Router,
