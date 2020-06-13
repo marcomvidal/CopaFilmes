@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using CopaFilmes.Backend.Models;
 
-namespace CopaFilmes.Backend.Services
+namespace CopaFilmes.Backend.Repositories
 {
     public interface IFilmsRepository
     {

@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using CopaFilmes.Backend.Models;
 using CopaFilmes.Backend.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace CopaFilmes.Backend.Controllers
 {

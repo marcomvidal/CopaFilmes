@@ -1,27 +1,29 @@
-# CopaFilmesFrontend
+# Campeonato de Filmes - Backend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+REST API responsável pela lógica de negócio da determinação de filmes vencedores enviados do front-end.
 
-## Development server
+## Ferramentas utilizadas
+- Angular 9
+- TypeScript 3.8
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Componentes
+Todos os componentes da aplicação estão dentro de `/src/app` e dispostos da seguinte forma:
+- `components`: Elementos de interface gráfica reaproveitáveis;
+- `models`: Lógica de negócio;
+- `pages`: Composição de componentes para geração de páginas navegáveis;
+- `services`: Interação com o back-end através de mensagens HTTP.
 
-## Code scaffolding
+## Fluxo da aplicação
+1. A página de `films-selection` é exibida para que sejam selecionados os filmes desejados para o campeonato;
+2. Ao clicar em <b>Gerar meu campeonato</b>, os filmes selecionados são enviados ao back-end e o campeonato é iniciado;
+3. É exibida a página de `championship-result` com os filmes vencedores obtidos do back-end.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Particularidades
+Dado que não há persistência definitiva de dados, os dados de cada campeonato são armazenados por uma hora no cache do back-end. Portanto, a navegação deve sempre iniciar de `films-selection`, que é a home page do projeto. Do contrário, a tela de resultados exibirá uma mensagem de que ainda não há vencedores definidos.
 
-## Build
+## Setup
+1. Instale o Node 12 ou superior;
+2. Restaure as dependências do NPM instaladas em `CopaFilmes.Frontend` com o comando `npm install`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Execução
+Entre no diretório de `CopaFilmes.Frontend` e execute a aplicação emitindo `ng serve`.

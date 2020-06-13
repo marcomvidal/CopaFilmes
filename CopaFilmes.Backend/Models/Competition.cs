@@ -15,11 +15,11 @@ namespace CopaFilmes.Backend.Models
         {
             if (FirstCompetitor.Nota == SecondCompetitor.Nota)
             {
-                bool isTheNameOfTheFirstFilmEarlier = 
+                bool isFirstFilmNameEarlier = 
                     string.Compare(FirstCompetitor.Titulo, SecondCompetitor.Titulo) == -1 ||
                     string.Compare(FirstCompetitor.Titulo, SecondCompetitor.Titulo) == 0;
 
-                return isTheNameOfTheFirstFilmEarlier ? FirstCompetitor : SecondCompetitor;
+                return isFirstFilmNameEarlier ? FirstCompetitor : SecondCompetitor;
             }
             
             return FirstCompetitor.Nota > SecondCompetitor.Nota ? FirstCompetitor : SecondCompetitor;

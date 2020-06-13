@@ -15,6 +15,15 @@ namespace CopaFilmes.Backend.Models
 
         public abstract IEnumerable<Film> DetermineWinners(IEnumerable<Film> films);
 
+        public IEnumerable<Film> Compare(Film firstFilm, Film secondFilm)
+        {
+            var competition = new Competition(firstFilm, secondFilm);
+
+            return competition.DetermineWinner() == firstFilm ?
+                new List<Film> { firstFilm, secondFilm } :
+                new List<Film> { secondFilm, firstFilm };
+        }
+
         protected void ValidateNumberOfContestants(IEnumerable<Film> films)
         {
             int contestants = Matches * 2;
@@ -37,15 +46,6 @@ namespace CopaFilmes.Backend.Models
             }
 
             return winners;
-        }
-
-        public IEnumerable<Film> Compare(Film firstFilm, Film secondFilm)
-        {
-            var competition = new Competition(firstFilm, secondFilm);
-
-            return competition.DetermineWinner() == firstFilm ?
-                new List<Film> { firstFilm, secondFilm } :
-                new List<Film> { secondFilm, firstFilm };
         }
     }
 }

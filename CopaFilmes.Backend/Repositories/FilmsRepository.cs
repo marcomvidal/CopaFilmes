@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CopaFilmes.Backend.Models;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace CopaFilmes.Backend.Services
+namespace CopaFilmes.Backend.Repositories
 {
     public class FilmsRepository : IFilmsRepository
     {
@@ -17,9 +17,10 @@ namespace CopaFilmes.Backend.Services
 
         public IEnumerable<Film> AllWinners()
         {
-            List<Film> winner;
+            List<Film> winners;
+            _memoryCache.TryGetValue(_cacheKey, out winners);
 
-            return _memoryCache.TryGetValue(_cacheKey, out winner) ? winner : new List<Film>();
+            return winners;
         }
 
         public IEnumerable<Film> SaveWinners(IEnumerable<Film> winners)
