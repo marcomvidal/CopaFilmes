@@ -37,15 +37,11 @@ namespace CopaFilmes.Backend.Models
 
         protected IEnumerable<Film> Compare(IEnumerable<Film> firstHalf, IEnumerable<Film> secondHalf)
         {
-            var winners = new List<Film>();
-            
-            for (int i = 0; i < Matches; i++)
+            return firstHalf.Zip(secondHalf, (first, second) =>
             {
-                var competition = new Competition(firstHalf.ElementAt(i), secondHalf.ElementAt(i));
-                winners.Add(competition.DetermineWinner());
-            }
-
-            return winners;
+                var competition = new Competition(first, second);
+                return competition.DetermineWinner();
+            });
         }
     }
 }
