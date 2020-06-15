@@ -20,18 +20,14 @@ namespace CopaFilmes.Test.Models
 
             var expectedWinners = new List<Film>
             {
-                new Film { Id = "tt4154756", Titulo = "Vingadores: Guerra Infinita", Ano = 2018, Nota = 8.8 },
-                new Film { Id = "tt0317705", Titulo = "Os Incríveis 2", Ano = 2004, Nota = 8 }
+                new Film { Id = "tt0317705", Titulo = "Os Incríveis 2", Ano = 2004, Nota = 8 },
+                new Film { Id = "tt4154756", Titulo = "Vingadores: Guerra Infinita", Ano = 2018, Nota = 8.8 }
             };
             
             var phase = new EliminatoryPhase(4);
             var winners = new List<Film>(phase.DetermineWinners(contestants));
 
-            expectedWinners.ForEach(
-                expected => Assert.True(
-                    winners.Find(winner => winner.Id == expected.Id) != null
-                )
-            );
+            Assert.Equal(expectedWinners, winners);
         }
 
         [Fact]

@@ -32,13 +32,9 @@ namespace CopaFilmes.Test.Models
                 new EliminatoryPhase(4),
                 new FinalPhase(2));
             
-            var winners = new List<Film>(championship.DetermineWinners(contestants));
+            var winners = championship.DetermineWinners(contestants);
 
-            expectedWinners.ForEach(
-                expected => Assert.True(
-                    winners.Find(winner => winner.Id == expected.Id) != null
-                )
-            );
+            Assert.Equal(expectedWinners, winners);
         }
     }
 }

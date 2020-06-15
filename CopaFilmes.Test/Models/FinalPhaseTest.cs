@@ -25,11 +25,7 @@ namespace CopaFilmes.Test.Models
             var phase = new FinalPhase(2);
             var winners = new List<Film>(phase.DetermineWinners(contestants));
 
-            expectedWinners.ForEach(
-                expected => Assert.True(
-                    winners.Find(winner => winner.Id == expected.Id) != null
-                )
-            );
+            Assert.Equal(expectedWinners, winners);
         }
 
         [Fact]
