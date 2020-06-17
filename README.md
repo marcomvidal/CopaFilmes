@@ -26,7 +26,8 @@ Mais detalhes de arquitetura a partir do README do diretório de cada um dos pro
 
 ## Execução
 1. Entre no diretório de `CopaFilmes.Backend` e execute a aplicação emitindo `dotnet run`;
-2. Entre no diretório de `CopaFilmes.Frontend` e execute a aplicação emitindo `ng serve`.
+2. Entre no diretório de `CopaFilmes.Frontend` e execute a aplicação emitindo `ng serve`;
+3. A aplicação pode ser acessada em `http://localhost:4200`.
 
 ## Execução dos testes
 Entre no diretório de `CopaFilmes.Test` e execute a bateria de testes com o comando `dotnet run`.
