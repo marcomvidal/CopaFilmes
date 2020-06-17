@@ -26,4 +26,4 @@ Dado que não há persistência definitiva de dados, os dados de cada campeonato
 2. Restaure as dependências do NPM instaladas em `CopaFilmes.Frontend` com o comando `npm install`.
 
 ## Execução
-Entre no diretório de `CopaFilmes.Frontend` e execute a aplicação emitindo `ng serve`.
+Entre no diretório de `CopaFilmes.Frontend` e execute a aplicação emitindo `ng serve`. A aplicação pode ser acessada em `http://localhost:4200`.

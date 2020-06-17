@@ -34,4 +34,4 @@ São três fases, que ocorrem na seguinte ordem: `InitialPhase`, `EliminatoryPha
 2. Restaure as dependências do NuGet instaladas em `CopaFilmes.Backend` com os comandos `dotnet restore` e `dotnet build`.
 
 ## Execução
-Entre no diretório de `CopaFilmes.Backend` e execute a aplicação emitindo `dotnet run`.
+Entre no diretório de `CopaFilmes.Backend` e execute a aplicação emitindo `dotnet run`. A aplicação pode ser acessada em `https://localhost:5001`.
