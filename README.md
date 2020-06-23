@@ -27,7 +27,8 @@ Mais detalhes de arquitetura a partir do README do diretório de cada um dos pro
 ## Execução
 1. Entre no diretório de `CopaFilmes.Backend` e execute a aplicação emitindo `dotnet run`;
 2. Entre no diretório de `CopaFilmes.Frontend` e execute a aplicação emitindo `ng serve`;
-3. A aplicação pode ser acessada em `http://localhost:4200`.
+3. O back-end funciona em HTTPS e o certificado digital é auto-assinado, sendo necessário acessar `http://localhost:5001` e aceitá-lo;
+4. A aplicação pode ser acessada em `http://localhost:4200`.
 
 ## Execução dos testes
 Entre no diretório de `CopaFilmes.Test` e execute a bateria de testes com o comando `dotnet run`.
@@ -40,3 +41,7 @@ Entre no diretório de `CopaFilmes.Test` e execute a bateria de testes com o com
 - TypeScript e Angular
 - Testes de software
 - Integração e desenvolvimento de API REST
+
+## Screenshots
+* [Seleção de filmes](https://raw.githubusercontent.com/marcomvidal/CopaFilmes/master/screenshot_listagem.png)
+* [Resultado do campeonato](https://raw.githubusercontent.com/marcomvidal/CopaFilmes/master/screenshot_resultado.png)

@@ -32,6 +32,7 @@ São três fases, que ocorrem na seguinte ordem: `InitialPhase`, `EliminatoryPha
 ## Setup
 1. Instale o .NET Core 3.1;
 2. Restaure as dependências do NuGet instaladas em `CopaFilmes.Backend` com os comandos `dotnet restore` e `dotnet build`.
+3. O back-end funciona em HTTPS e o certificado digital é auto-assinado, sendo necessário acessar `http://localhost:5001` e aceitá-lo.
 
 ## Execução
 Entre no diretório de `CopaFilmes.Backend` e execute a aplicação emitindo `dotnet run`. A aplicação pode ser acessada em `https://localhost:5001`.
